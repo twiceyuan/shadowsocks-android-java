@@ -1,0 +1,13 @@
+language: android
+sudo: false
+android:
+  components:
+  - build-tools-26.0.1
+  - android-26
+  - extra-android-m2repository
+  - extra-android-support
+script:
+- "./gradlew assemblePublishRelease"
+before_install:
+- openssl aes-256-cbc -K $encrypted_1656b832f969_key -iv $encrypted_1656b832f969_iv
+  -in key.jks.enc -out key.jks -d
