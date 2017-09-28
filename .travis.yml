@@ -11,3 +11,11 @@ script:
 before_install:
 - openssl aes-256-cbc -K $encrypted_1656b832f969_key -iv $encrypted_1656b832f969_iv
   -in key.jks.enc -out key.jks -d
+deploy:
+  provider: releases
+  api_key:
+    secure: KJ3Ih7xGLFI41ovWn3/TOtfiPTqAVqeGWTLQtnaW46IkyRGrV7MNMXPy6BE7SPfqZQkoRqtqLPJpYXeZw5CKvC8OinTBtpIHqNcMSkssr13CqQ/KtTR6+lIXQWBidhDirZXc2WiKOEv1PF+egsT3yxseaIGFpOjNV9nDhe4NNlw0XDjMxe7pUPVsiSWJEdCtnViUrfmQi8fmZxOCkEif7wNUHXfnN4ccUcDahTp8nn7cfNsxW498A/YFf22PYxIgANZkxLodecpoj/QuG7oOPVOEkhBCu6zzJRgjK0Eisba2zMswtAH//pKdvDITzODv4XydNSEwWQrG4MCVANkCFYo5taXNTiR7pFibzyGzqWfyMc+CK/Z/cxrCw5zYCBZoyejsiXXLMR8RMhLGfTztpazkchPjnizQ7wqFVnrEAdOilwdwGXyV3mG+qpPvx57VA8XOeP5WeZkXFHwad0ooVOxGKqGSvy3TUd50LlyvCKO4VV3RNxQ+cnO78ru+Ib5/B/xufCSSabSqApwfzUkUxTn/yzHgkAvz/Rs+goKntoWA05fR3gMzXEITQgJxkIdpU6SfHe1SzE3OomhwZC0OYNZufARoZCkISi+2ackRsUAcN31yQLRZyl/hx4VmTQqO1DNA/QAfa6nbgUGTiUTPoo2XdEP2RIsbJEEmA/98IgE=
+  file: app/build/outputs/apk/app-release.apk
+  on:
+    tags: true
+ 
